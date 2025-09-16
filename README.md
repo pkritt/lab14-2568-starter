@@ -1,11 +1,12 @@
-# Lab14: Mantine Marathon Register form (Part 2) 
+# Lab14: Mantine Marathon Register form (Part 2)
+
 (React + Mantine + Global state starter + Zod Libary)
 
 ### ป้อนข้อมูลนักศึกษา
 
-รหัส นศ.:
+รหัส นศ.:670610670
 
-ชื่อ-สกุล :
+ชื่อ-สกุล :นายกฤตภาส เพชรานนท์
 
 ---
 
@@ -38,6 +39,7 @@ Install Mantine core packages:
 pnpm install @mantine/core @mantine/hooks
 
 ```
+
 ---
 
 🎨 UI Templates
@@ -133,6 +135,7 @@ Installation:
 pnpm install zustand
 
 ```
+
 ---
 
 🎯 Zod Library
@@ -145,6 +148,7 @@ Installation:
 pnpm install Zod
 
 ```
+
 ---
 
 🎯 React Icons
@@ -164,6 +168,7 @@ Usage example:
 import { IconSun } from '@tabler/icons-react';
 
 ```
+
 ---
 
 📦 google fonts

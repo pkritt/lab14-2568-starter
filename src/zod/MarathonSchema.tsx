@@ -14,16 +14,26 @@ export const marathonSchema = z
     agree: z.boolean().default(false),
     email: z.email(),
     haveCoupon: z.boolean().default(false),
-    couponCode: z.string().optional(),
+    couponcode: z.string().optional(),
+    password: z
+      .string()
+      .min(6, { message: "Password must contain at least 6 characters" })
+      .max(12, { message: "Password must not exceed 12 characters" }),
+    confirmpassword: z.string(),
   })
   .refine(
     (data) => {
-      if (!data.haveCoupon) return true;
-      return data.couponCode?.trim() === "CMU2025";
+      if (!data.couponcode) return true;
+      return data.couponcode?.trim() === "CMU2025";
     },
     {
       message: "Invalid coupon code",
-      path: ["couponCode"],
+      path: ["couponcode"],
+    })
+    .refine(
+    (pass) => pass.confirmpassword === pass.password,{
+      message: "Password does not match",
+      path: ["confirmpassword"],
     }
   );
 export type MarathonForm = z.infer<typeof marathonSchema>;
